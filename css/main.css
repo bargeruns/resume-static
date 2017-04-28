@@ -3,7 +3,6 @@
 
 body {
   padding: 25px;
-  margin-top: 55px;
   margin-bottom: 120px; }
 
 .is-centered {
@@ -14,14 +13,14 @@ h3.title {
   color: turquoise; }
 
 .contact-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
+  margin: auto;
   margin-bottom: 35px;
   width: 100%;
+  max-width: 850px;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   background: white; }
 
 img.project-image {

@@ -11,7 +11,8 @@
   </head>
 
   <header>
-    <nav class="level is-mobile contact-nav">
+    <h3 class="title is-centered">{{sean m brage}}</h3>
+    <nav class="level is-mobile contact-nav is-centered">
       <div class="level-item has-text-centered">
         <div>
           <a href="mailto:iamseanbrage@gmail.com" class="title"><span class="icon"><i class="fa fa-envelope-o"></i></span></a>
@@ -31,7 +32,6 @@
         <a href="https://github.com/bargeruns" class="title" target="blank"><span class="icon"><i class="fa fa-github"></i></span></a>
       </div>
     </nav>
-    <h3 class="title is-centered">{{sean m brage}}</h3>
     <nav class="navbar-container">
       <div class="nav-item-box" data-route="culture">culture</div>
       <div class="nav-item-box selected" data-route="experience">experience</div>
@@ -42,8 +42,8 @@
   <body>
 
     <section class="route-content section">
-
-      <div id="experience">
+      <div id="experience" class="columns">
+        <div class="column">
         <section class="content">
           <p class="title is-5 blurb-title">Work History</p>
 
@@ -72,8 +72,10 @@
           <p class="title is-6 blurb-title">Other Experience</p>
           <p>- Galvanize Web Development Intensive, graduated April 2016</p>
         </section>
+        </div>
         <hr>
-        <article class="content">
+        <div class="columns column">
+          <article class="content column">
           <p class="title is-5 blurb-title">Technologies & Frameworks</p>
           <div class="columns">
             <div class="column">
@@ -100,7 +102,7 @@
             </div>
           </div>
         </article>
-        <aside class="content">
+        <aside class="content column">
           <p class="title is-5 blurb-title">Soft Skills</p>
           <ul>
             <li>Communication</li>
@@ -110,6 +112,7 @@
             <li>Training</li>
           </ul>
         </aside>
+        </div>
       </div>
 
       <div id="culture" style="display: none">
