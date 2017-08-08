@@ -1,11 +1,13 @@
 const gulp = require('gulp');
+const babel = require('gulp-babel');
+const connect = require('gulp-connect');
+const css = require('gulp-minify-css');
 const html = require('gulp-minify-html');
 const images = require('gulp-imagemin');
-const babel = require('gulp-babel');
-const css = require('gulp-minify-css');
 const sass = require('gulp-sass');
 const uglify = require('gulp-uglify');
 
+// define tasks to minify & bundle for deployment
 gulp.task('minify-js', () => {
   gulp.src('./index.js')
     .pipe(babel({
@@ -37,6 +39,32 @@ gulp.task('minify-css', () => {
     .pipe(gulp.dest('./public/css'));
 });
 
+// # define tasks for serving and reloading content while developing
+gulp.task('connect', () => {
+  connect.server({
+    root: '.',
+    livereload: true
+  });
+});
+
+// ## load html
+gulp.task('livereload-html', () => {
+  gulp.src('./index.html')
+    .pipe(connect.reload());
+});
+
+// ## load CSS
+gulp.task('livereload-css', () => {
+  gulp.src('./css/main.css')
+    .pipe(connect.reload());
+});
+
+// ## load JS
+gulp.task('livereload-js', () => {
+  gulp.src('./index.js')
+    .pipe(connect.reload());
+});
+
 gulp.task('sass', () => {
   gulp.src('./scss/*.scss')
     .pipe(sass())
@@ -44,6 +72,13 @@ gulp.task('sass', () => {
     .pipe(gulp.dest('./css'));
 });
 
+gulp.task('watch', () => {
+  gulp.watch(['./index.html'], ['livereload-html']);
+  gulp.watch(['./css/main.css'], ['livereload-css']);
+  gulp.watch(['./index.js'], ['livereload-js']);
+  gulp.watch(['./scss/*.scss'], ['sass']);
+});
+
 gulp.task('build', ['sass', 'minify-css', 'minify-js', 'minify-html', 'minify-img']);
 
-gulp.task('default', ['build']);
+gulp.task('default', ['sass', 'connect', 'watch']);
