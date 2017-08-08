@@ -5,28 +5,46 @@ body {
     margin: 0 auto; }
   @media only screen and (min-device-width: 768px) {
     body > * {
-      max-width: 65vw; } }
+      max-width: 45vw; } }
 
-h1, h2, h3, a {
-  font-family: 'Roboto', sans-serif;
-  font-weight: normal; }
+h1, h2, h3, h4 {
+  margin: 8px;
+  font-family: "Roboto Slab", serif;
+  font-weight: 300;
+  color: #333; }
 
 h1 {
   font-size: 11vw; }
 
 h2 {
-  font-size: 8.5vw; }
+  font-size: 9vw; }
 
 h3 {
-  font-size: 6.75vw; }
+  font-family: "Roboto Slab", serif;
+  font-size: 7.5vw;
+  color: #D24D57; }
+
+h4 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 5vw; }
 
 p {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 4.75vmin; }
+  font-family: "Open Sans", sans-serif;
+  font-size: 3vmin;
+  font-weight: 300;
+  color: #333; }
+  p.splash-text {
+    font-family: "Open Sans", sans-serif;
+    font-size: 3.25vmin;
+    font-weight: 400; }
 
 a {
-  color: #D24D57;
+  font-family: "Roboto Slab", serif;
+  font-weight: 300;
+  color: gray;
   text-decoration: none; }
+  a:hover {
+    color: #D24D57; }
 
 nav {
   display: flex;
@@ -40,15 +58,27 @@ nav {
     nav .nav-social-links .nav-link:nth-child(2) {
       margin-left: 24px; }
 
+li.list-item {
+  font-size: 3.25vw;
+  font-family: "Open Sans", sans-serif; }
+
 @media only screen and (min-device-width: 768px) {
   h1 {
-    font-size: 5.25vw; }
+    font-size: 4vw; }
   h2 {
-    font-size: 3.0vw; }
+    font-size: 2.5vw; }
   h3 {
-    font-size: 2.25vw; }
+    font-size: 1.75vw;
+    color: #D24D57; }
+  h4 {
+    font-size: 1.25vw; }
   p {
-    font-size: 2.75vmin; }
+    font-size: 1vw; }
+    p.splash-text {
+      font-size: 1.25vw; }
+  li.list-item {
+    font-size: 1.25vw;
+    font-weight: 300; }
   nav {
     display: flex;
     flex-direction: row;
@@ -56,10 +86,10 @@ nav {
     justify-content: flex-start;
     align-items: center; }
     nav .nav-link {
-      font-size: 2.25vw; }
+      font-size: 1.25vw; }
       nav .nav-link:nth-child(2) {
         margin-left: 24px; }
     nav .nav-social-links {
       margin-left: 24px; }
       nav .nav-social-links .nav-link {
-        font-size: 3.75vw; } }
+        font-size: 1.75vw; } }

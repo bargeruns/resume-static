@@ -1,3 +1,7 @@
+$callout: #D24D57;
+$heading: 'Roboto Slab', serif;
+$content: 'Open Sans', sans-serif;
+
 body {
   box-sizing: border-box;
 
@@ -8,15 +12,17 @@ body {
 
   @media only screen and (min-device-width: 768px) {
     &>* {
-      max-width: 65vw;
+      max-width: 45vw;
     }
   }
 }
 
 // primary styles, targeting iPhone first
-h1,h2,h3,a {
-  font-family: 'Roboto', sans-serif;
-  font-weight: normal;
+h1,h2,h3,h4 {
+  margin: 8px;
+  font-family: $heading;
+  font-weight: 300;
+  color: #333;
 }
 
 h1 {
@@ -24,20 +30,42 @@ h1 {
 }
 
 h2 {
-  font-size: 8.5vw;
+  font-size: 9vw;
 }
+
 h3 {
-  font-size: 6.75vw;
+  font-family: $heading;
+  font-size: 7.5vw;
+  color: $callout;
+}
+
+h4 {
+  font-family: $content;
+  font-size: 5vw;
 }
 
 p {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 4.75vmin;
+  font-family: $content;
+  font-size: 3vmin;
+  font-weight: 300;
+  color: #333;
+
+  &.splash-text {
+    font-family: $content;
+    font-size: 3.25vmin;
+    font-weight: 400;
+  }
 }
 
 a {
-  color: #D24D57;
+  font-family: $heading;
+  font-weight: 300;
+  color: gray;
   text-decoration: none;
+
+  &:hover {
+    color: $callout;
+  }
 }
 
 nav {
@@ -58,22 +86,41 @@ nav {
   }
 }
 
+li.list-item {
+  font-size: 3.25vw;
+  font-family: $content;
+}
+
 // styles for tablet and desktop
 @media only screen and (min-device-width: 768px) {
   h1 {
-    font-size: 5.25vw;
+    font-size: 4vw;
   }
 
   h2 {
-    font-size: 3.0vw;
+    font-size: 2.5vw;
   }
 
   h3 {
-    font-size: 2.25vw;
+    font-size: 1.75vw;
+    color: $callout;
+  }
+
+  h4 {
+    font-size: 1.25vw;
   }
 
   p {
-    font-size: 2.75vmin;
+    font-size: 1vw;
+
+    &.splash-text {
+      font-size: 1.25vw;
+    }
+  }
+
+  li.list-item {
+    font-size: 1.25vw;
+    font-weight: 300;
   }
 
   nav {
@@ -84,7 +131,7 @@ nav {
     align-items: center;
 
     & .nav-link {
-      font-size: 2.25vw;
+      font-size: 1.25vw;
 
       &:nth-child(2) { margin-left: 24px };
     }
@@ -92,7 +139,7 @@ nav {
     & .nav-social-links {
       margin-left: 24px;
       & .nav-link {
-        font-size: 3.75vw;
+        font-size: 1.75vw;
       }
     }
   }
