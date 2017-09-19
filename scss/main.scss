@@ -68,7 +68,7 @@ nav {
 }
 
 
-@media only screen and (max-device-width: 768px) {
+@media device, screen and (max-device-width: 768px) {
   body {
     &>* {
       max-width: 90vw;
@@ -102,7 +102,6 @@ nav {
     }
   }
 
-  
 
   nav {
     display: flex;
@@ -112,10 +111,11 @@ nav {
 
     .nav-link {
       font-size: 5.75vw;
-      &:nth-child(2) { margin-left: 8px };
+      &:nth-child(2) { margin-left: 0;}
     }
 
     .nav-social-links {
+      margin-left: 0;
       .nav-link {
         font-size: 9.75vw;
         &:nth-child(2) { margin-left: 24px; }

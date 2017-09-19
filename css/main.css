@@ -415,7 +415,7 @@ nav {
   nav .nav-social-links {
     margin-left: 24px; }
 
-@media only screen and (max-device-width: 768px) {
+@media device, screen and (max-device-width: 768px) {
   body > * {
     max-width: 90vw; }
   h1 {
@@ -442,11 +442,13 @@ nav {
     nav .nav-link {
       font-size: 5.75vw; }
       nav .nav-link:nth-child(2) {
-        margin-left: 8px; }
-    nav .nav-social-links .nav-link {
-      font-size: 9.75vw; }
-      nav .nav-social-links .nav-link:nth-child(2) {
-        margin-left: 24px; }
+        margin-left: 0; }
+    nav .nav-social-links {
+      margin-left: 0; }
+      nav .nav-social-links .nav-link {
+        font-size: 9.75vw; }
+        nav .nav-social-links .nav-link:nth-child(2) {
+          margin-left: 24px; }
   li.list-item {
     font-size: 3.25vw;
     font-family: "Open Sans", sans-serif; } }
