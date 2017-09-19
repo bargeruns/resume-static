@@ -1,23 +1,19 @@
+@import "normalize";
+
 $callout: #D24D57;
 $heading: 'Roboto Slab', serif;
 $content: 'Open Sans', sans-serif;
 
 body {
   box-sizing: border-box;
+  background-color: #FDFDF0;
 
   &>* {
-    max-width: 90vw;
+    max-width: 45vw;
     margin: 0 auto;
-  }
-
-  @media only screen and (min-device-width: 768px) {
-    &>* {
-      max-width: 45vw;
-    }
   }
 }
 
-// primary styles, targeting iPhone first
 h1,h2,h3,h4 {
   margin: 8px;
   font-family: $heading;
@@ -25,36 +21,8 @@ h1,h2,h3,h4 {
   color: #333;
 }
 
-h1 {
-  font-size: 11vw;
-}
-
-h2 {
-  font-size: 9vw;
-}
-
 h3 {
-  font-family: $heading;
-  font-size: 7.5vw;
   color: $callout;
-}
-
-h4 {
-  font-family: $content;
-  font-size: 5vw;
-}
-
-p {
-  font-family: $content;
-  font-size: 3vmin;
-  font-weight: 300;
-  color: #333;
-
-  &.splash-text {
-    font-family: $content;
-    font-size: 3.25vmin;
-    font-weight: 400;
-  }
 }
 
 a {
@@ -68,79 +36,96 @@ a {
   }
 }
 
-nav {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: left;
+p {
+  font-family: $content;
+  color: #333;
 
-  .nav-link {
-    font-size: 5.75vw;
-  }
-
-  .nav-social-links {
-    .nav-link {
-      font-size: 9.75vw;
-      &:nth-child(2) { margin-left: 24px; }
-    }
+  &.splash-text {
+    font-weight: 300;
   }
 }
 
 li.list-item {
-  font-size: 3.25vw;
   font-family: $content;
+  color: #333;
+  font-weight: 300;
 }
 
-// styles for tablet and desktop
-@media only screen and (min-device-width: 768px) {
+nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+
+  & .nav-link {
+    &:nth-child(2) { margin-left: 24px };
+  }
+
+  & .nav-social-links {
+    margin-left: 24px;
+  }
+}
+
+
+@media only screen and (max-device-width: 768px) {
+  body {
+    &>* {
+      max-width: 90vw;
+    }
+  }
   h1 {
-    font-size: 4vw;
+    font-size: 11vw;
   }
 
   h2 {
-    font-size: 2.5vw;
+    font-size: 8.25vw;
   }
 
   h3 {
-    font-size: 1.75vw;
+    font-size: 6.5vw;
     color: $callout;
   }
 
   h4 {
-    font-size: 1.25vw;
+    font-family: $content;
+    font-size: 3.85vw;
   }
 
   p {
-    font-size: 1vw;
+    font-size: 3vmin;
+    color: #333;
 
     &.splash-text {
-      font-size: 1.25vw;
+      font-size: 3.25vmin;
+      font-weight: 400;
+    }
+  }
+
+  
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: left;
+
+    .nav-link {
+      font-size: 5.75vw;
+      &:nth-child(2) { margin-left: 8px };
+    }
+
+    .nav-social-links {
+      .nav-link {
+        font-size: 9.75vw;
+        &:nth-child(2) { margin-left: 24px; }
+      }
     }
   }
 
   li.list-item {
-    font-size: 1.25vw;
-    font-weight: 300;
-  }
-
-  nav {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-
-    & .nav-link {
-      font-size: 1.25vw;
-
-      &:nth-child(2) { margin-left: 24px };
-    }
-
-    & .nav-social-links {
-      margin-left: 24px;
-      & .nav-link {
-        font-size: 1.75vw;
-      }
-    }
+    font-size: 3.25vw;
+    font-family: $content;
   }
 }
+
